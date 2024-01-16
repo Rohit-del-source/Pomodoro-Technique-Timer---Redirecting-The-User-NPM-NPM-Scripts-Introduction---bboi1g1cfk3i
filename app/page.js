@@ -59,12 +59,23 @@ const App = () => {
     setBreakSecond(300);
     setWorkSecond(1500);
   }
-  const setDuration =(e)=>{
+  const setDuration = (e) => {
     e.preventDefault();
     setResetFlag(false);
     setType("work");
-    setWorkSecond(workDuration*60);
-    setBreakSecond(breakDuration*60);
+  
+    if (workDuration > 0 || breakDuration > 0) {
+      // Ensure either Work-Duration or Break-Duration is greater than 0
+      setWorkSecond(workDuration * 60);
+      setBreakSecond(breakDuration * 60);
+    } else {
+      // Set default values if both are 0
+      setWorkSecond(1500); // 25 minutes in seconds
+      setBreakSecond(300); // 5 minutes in seconds
+      // alert("Cannot set Work-Duration and Break-Duration to 0 simultaneously");
+    }
+  
+  
   }
   return (
     <div id="main" style={{textAlign:"center"}}>

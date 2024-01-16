@@ -72,11 +72,10 @@ const App = () => {
       // Set default values if both are 0
       setWorkSecond(1500); // 25 minutes in seconds
       setBreakSecond(300); // 5 minutes in seconds
-      // alert("Cannot set Work-Duration and Break-Duration to 0 simultaneously");
+      //alert("Cannot set Work-Duration and Break-Duration to 0 simultaneously");
     }
+  };
   
-  
-  }
   return (
     <div id="main" style={{textAlign:"center"}}>
        <div className="clock">
